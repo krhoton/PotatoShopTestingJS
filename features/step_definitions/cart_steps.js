@@ -77,6 +77,10 @@ function selectingPotatoes(num_potatoes) {
   }
 }
 
+/*---- Funciones por implementar ----*//*
+
 function checkingSite(){
   assert.equal(title, "Welcome to the Potato Shop!");
 }
+
+*/
