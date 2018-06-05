@@ -1,7 +1,7 @@
 var {defineSupportCode} = require('cucumber');
 
 /* Sample_Syntax */
-/*
+
 defineSupportCode(function ({Given, When, Then}) {
 
   Given(/^I want to buy some potatoes$/, function(){
@@ -18,4 +18,3 @@ defineSupportCode(function ({Given, When, Then}) {
     checkOk.includes("Thank you for your purchase!");
   })
 })
-*/
