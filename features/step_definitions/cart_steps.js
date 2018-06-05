@@ -6,9 +6,7 @@ let quantity = "";
 defineSupportCode(function ({Given, When, Then}) {
 
   Given(/^I've selected a few potates$/, function(){
-    for(var i = 0; i<3; i++){
-      browser.click("button.btn.btn-primary");
-    }
+    selectingPotatoes(3);
   });
 
   When(/^I check the cart$/, function(){
@@ -21,9 +19,7 @@ defineSupportCode(function ({Given, When, Then}) {
   });
 
   Given(/^I've selected two potatoes$/, function(){
-    for(var i = 0; i<2; i++){
-      browser.click("button.btn.btn-primary");
-    }
+    selectingPotatoes(2);
   });
 
   When(/^I check the number of potatoes on the cart$/, function(){
@@ -35,3 +31,14 @@ defineSupportCode(function ({Given, When, Then}) {
     assert.equal(quantity, "2x");
   })
 })
+
+
+
+
+/*-- Funciones que se repiten --*/
+
+function selectingPotatoes(num_potatoes) {
+  for(var i = 0; i<num_potatoes; i++){
+    browser.click("button.btn.btn-primary");
+  }
+}
