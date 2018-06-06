@@ -37,12 +37,41 @@ defineSupportCode(function ({Given, When, Then}) {
   });
 
   Given(/^I'm on the last page$/, function(){
+
+    // Iremos a una segunda página, para comprobar que funciona y que se puede
+    // volver al principio con una ruta "corta"
+
+    browser.click("a#next-potato-page");
+
   });
 
   When(/^I refresh the browser$/, function(){
+
+    // Ejecutamos la manera más facil de volver al inicio
+
+    browser.refresh();
+
   });
 
   Then(/^I will not be able to return to another page$/, function(){
+
+    // Si estamos en la primera página no seremos capaces de volver a una
+    // página anterior, así que realizaremos la comprobación de que eso es
+    // cierto para acabar con este escenario; si no, lanzaremos un error.
+
+    var validate = validation();
+    assert.equal(validate, true);
+
   });
 
 })
+
+
+function validation(){
+
+  if (browser.waitForExist("td.col-2.disabled", 20000) == true){
+
+    return true;
+
+  }
+}
