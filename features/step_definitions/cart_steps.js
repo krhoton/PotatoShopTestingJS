@@ -1,5 +1,4 @@
 const assert = require('assert').strict;
-const title = browser.getText("div.jumbotron.text-center h1.display-3");
 var {defineSupportCode} = require('cucumber');
 let totalPrice = "";
 let quantity = "";
@@ -77,10 +76,10 @@ function selectingPotatoes(num_potatoes) {
   }
 }
 
-/*---- Funciones por implementar ----*//*
-
-function checkingSite(){
-  assert.equal(title, "Welcome to the Potato Shop!");
+/*---- Funciones por implementar ----*/
+/*
+async function checkingSite(){
+  assert.equal(await title, "Welcome to the Potato Shop!");
+  console.log(title);
 }
-
 */

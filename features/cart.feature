@@ -19,6 +19,8 @@ Feature: Cart
     When I press the clear button on the cart
     Then the cart must be empty
 
+#  @Scenario compartido con la feature de buy y de stock
+
   Scenario: I havent selected potatoes
     Given I've clear the cart with anything that have it
     When I press the buy button
