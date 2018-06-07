@@ -7,6 +7,8 @@ var anotherPotatoeToCompare = "";
 
 defineSupportCode(function ({Given, When, Then}) {
 
+  /*--- Scenario: I want to see more potatoes ---*/
+
   Given(/^I want to see more than the first potatoes$/, function(){
 
     initialPotatoeToCompare = browser.getText("td.col-8.item")[0];
@@ -26,6 +28,8 @@ defineSupportCode(function ({Given, When, Then}) {
     assert.notEqual(initialPotatoeToCompare, anotherPotatoeToCompare);
 
   });
+
+  /*--- Scenario: Returning to the first page ---*/
 
   Given(/^I'm on the last page$/, function(){
 
