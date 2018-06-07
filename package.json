@@ -4,8 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "ENV=int ./node_modules/.bin/wdio wdio.conf.js",
-    "wdio": "wdio"
+    "wdio": "wdio",
+    "test": "ENV=int ./node_modules/.bin/wdio wdio.conf.js"
   },
   "author": "",
   "license": "ISC",
