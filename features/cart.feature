@@ -10,18 +10,18 @@ Feature: Cart
     Then I must see the cost of my purchase
 
   Scenario: I want to see if the cart reflect how many potatoes I'm gonna purchase
-    Given I've selected two potatoes
+    Given I've selected some potatoes
     When I check the number of potatoes on the cart
-    Then I must see two potatoes too
+    Then I must see the same potatoes on the cart
 
   Scenario: I want to clear my cart
     Given I've alredy selected some potatoes
-    When I press the clear button on the cart
+    When I clear the cart
     Then the cart must be empty
 
 #  @Scenario compartido con la feature de buy y de stock
 
   Scenario: I havent selected potatoes
     Given I've clear the cart with anything that have it
-    When I press the buy button
-    Then I must see the alert "You need to first add items to your cart"
+    When I go ahead with the purchase
+    Then I must see the alert

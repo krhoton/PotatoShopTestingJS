@@ -25,7 +25,7 @@ defineSupportCode(function ({Given, When, Then}) {
 
   });
 
-  Given(/^I've selected two potatoes$/, function(){
+  Given(/^I've selected some potatoes$/, function(){
 
     selectingPotatoes(2);
 
@@ -38,7 +38,7 @@ defineSupportCode(function ({Given, When, Then}) {
 
   });
 
-  Then(/^I must see two potatoes too$/, function(){
+  Then(/^I must see the same potatoes on the cart$/, function(){
 
     assert.equal(quantity, "2x");
 
@@ -50,7 +50,7 @@ defineSupportCode(function ({Given, When, Then}) {
 
   });
 
-  When(/^I press the clear button on the cart$/, function(){
+  When(/^I clear the cart$/, function(){
 
     browser.click("button#dropdownCart");
     totalPrice = browser.getText("td#totalPrice");
@@ -71,7 +71,7 @@ defineSupportCode(function ({Given, When, Then}) {
 
   });
 
-  When(/^I press the buy button$/, function(){
+  When(/^I go ahead with the purchase$/, function(){
 
     browser.click("button#dropdownCart");
     browser.click("button#clearcart");
@@ -81,11 +81,11 @@ defineSupportCode(function ({Given, When, Then}) {
 
   });
 
-  Then(/^I must see the alert "You need to first add items to your cart"$/, function(){
+  Then(/^I must see the alert$/, function(){
 
     alert = browser.getText("div#alert");
     assert.equal(alert, "You need to first add items to your cart\n×");
-    
+
   })
 })
 
