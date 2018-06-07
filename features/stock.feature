@@ -10,7 +10,7 @@ Scenario: Add products to cart
         
 Scenario: Add all product to cart
   Given I add all product to cart
-  When I don't have stock of that product
+  When I dont have stock of that product
   Then I have all product in my cart
 
 Scenario: I cant add product without stock
