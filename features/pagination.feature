@@ -6,7 +6,7 @@ Feature: Pagination
 
   Scenario: I want to see more potatoes
     Given I want to see more than the first potatoes
-    When I search the next button and press on it
+    When I go to the next page
     Then I will see another type of potaoes
 
   Scenario: Returning to the first page
