@@ -1,6 +1,5 @@
 const {Given, When, Then} = require('cucumber');
 
-
 Given(/^I am on potatoeshop page$/,()=>{
 
 });
