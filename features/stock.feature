@@ -1,7 +1,25 @@
 Feature: Stock
+  As a user
+  I want to buy potatoes
+  So that I add producto in my shopping cart
 
-  We want to know how many potatoes we can buy
-  and for do it, we need to check the Stock
-  before we start the purchase
+Scenario: Add products to cart
+  Given I am on potatoeshop page
+  When I add a product to cart
+  Then discount the product from stock
+        
+Scenario: Add all product to cart
+  Given I add all product to cart
+  When I don't have stock of that product
+  Then I have all product in my cart
 
-  Scenario:
+Scenario: I cant add product without stock
+  Given there arent stock of product
+  When I add the product in my cart
+  Then I cant add the product
+  
+Scenario: Clear the cart
+  Given I add all product to cart
+  When I was wrong to buy the product
+  Then I clear the cart
+  And the stock of product come back the initial state  

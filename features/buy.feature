@@ -1,10 +1,10 @@
 Feature: Buy
 
-  We love the potatoes
-  so we will buy different kind of it
-  Then we will check our purchase
+  As a user
+  I want to add potatoes in my cart
+  So that I buy potatoes
 
-  @Sample_scenario
+  @Buy_scenario
   Scenario: I buy some potatoes
     Given I want to buy some potatoes
     When I click to buy on the cart after selecting some potatoes
