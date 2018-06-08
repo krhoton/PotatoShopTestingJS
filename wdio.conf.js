@@ -145,7 +145,7 @@ exports.config = {
     // with `/`, the base url gets prepended, not including the path portion of your baseUrl.
     // If your `url` parameter starts without a scheme or `/` (like `some/path`), the base url
     // gets prepended directly.
-    baseUrl: 'http://localhost:4200',
+    baseUrl: 'http://localhost',
     //
     // Default timeout for all waitForXXX commands.
     waitforTimeout: 10000,
@@ -355,11 +355,14 @@ exports.config = {
     },
     //
     // Cucumber specific hooks
+    beforeScenario: function (scenario) {
+	    //browser.url("http://localhost:4200")
+      browser.windowHandleMaximize();
+    },
+    /*
     beforeFeature: function (feature) {
     },
-    beforeScenario: function (scenario) {
-			browser.url("http://localhost:4200")
-    },
+    
     beforeStep: function (step) {
     },
     afterStep: function (stepResult) {
@@ -367,6 +370,6 @@ exports.config = {
     afterScenario: function (scenario) {
     },
     afterFeature: function (feature) {
-    }
+    }*/
 
 };

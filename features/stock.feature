@@ -19,7 +19,7 @@ Scenario: I cant add product without stock
   Then I cant add the product
   
 Scenario: Clear the cart
-  Given I add all product to cart
+  Given I add all product in my cart
   When I was wrong to buy the product
   Then I clear the cart
   And the stock of product come back the initial state  

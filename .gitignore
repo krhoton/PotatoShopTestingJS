@@ -1,0 +1,11 @@
+package-lock.js
+package.js
+wdio.conf.js
+shots
+mode_modules
+README.md
+.\features\cart.feature
+.\features\download.feature
+.\features\order.feature
+.\features\pagination.feature
+.\features\upload.feature
