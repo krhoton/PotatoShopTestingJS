@@ -1,0 +1,20 @@
+{
+  "name": "proyectopractica",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "wdio": "wdio",
+    "test": "ENV=int ./node_modules/.bin/wdio wdio.conf.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "cucumber": "^4.2.1",
+    "selenium-standalone": "^6.14.1",
+    "wdio-cucumber-framework": "1.0.2",
+    "wdio-selenium-standalone-service": "0.0.10",
+    "wdio-spec-reporter": "^0.1.4",
+    "webdriverio": "^4.12.0"
+  }
+}
