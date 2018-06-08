@@ -1,1 +1,2 @@
-var {defineSupportCode} = require('cucumber');
+const {Given, When, Then} = require('cucumber');
+
