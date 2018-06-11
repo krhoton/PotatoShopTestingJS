@@ -23,4 +23,3 @@ Feature: Cart
     Given I've clear the cart with anything that have it
     When I go ahead with the purchase
     Then I must see the alert
-

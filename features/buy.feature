@@ -1,4 +1,5 @@
 Feature: Buy
+
   As a user
   I want to add potatoes in my cart
   So that I buy potatoes
