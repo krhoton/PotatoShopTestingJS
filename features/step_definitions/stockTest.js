@@ -1,6 +1,6 @@
 const {Given, When, Then} = require('cucumber');
 const {getTexto,comprarProductos,validarStock,limpiarCarrito} =
-require('../components_functions/stock_function');
+require('../components_functions/stockFunction');
 
 const urlPotatoShop = "http://localhost:4200/";
 const timeOut = 100000;
