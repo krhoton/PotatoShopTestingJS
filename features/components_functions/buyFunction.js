@@ -4,7 +4,7 @@ module.exports = {
     comparacionPrecios: function(precioCarrito,precioProducto,numeroDeCompras){
         //hacemos la comprobacion conforme los precios corresponden con:
         //precio total que hay en el carrito = multiplicación del precio del producto comprado con numero de compras. 
-        return parseFloat(precioCarrito.replace("€",""))===parseFloat(precioProducto.replace("€",""))*parseFloat(numeroDeCompras);
+        return (parseFloat(precioCarrito.replace("€",""))).toFixed(2)===(parseFloat(precioProducto.replace("€",""))*numeroDeCompras).toFixed(2);
     },
     buyProducts: function(){
         let comparar = browser.getText('#dropdownCart'); 
@@ -20,6 +20,9 @@ module.exports = {
 /******************************************* TEST DE FUNCIONES *****************************************************/
 
 function comparacionDePrecios(precioCarrito,precioProducto,numeroDeCompras){
-    return parseFloat(precioCarrito.replace("€",""))===parseFloat(precioProducto.replace("€",""))*parseFloat(numeroDeCompras);
+   return (parseFloat(precioCarrito.replace("€",""))).toFixed(2)===(parseFloat(precioProducto.replace("€",""))*numeroDeCompras).toFixed(2);
 }
-assert.equal(comparacionDePrecios('15.96€','3.99€',4),true);
+assert.equal(comparacionDePrecios('0','1',0),true);
+assert.equal(comparacionDePrecios('9','3',3),true);
+assert.equal(comparacionDePrecios('9€','3€',3),true);
+assert.equal(comparacionDePrecios('9.60€','3.20€',3),true);

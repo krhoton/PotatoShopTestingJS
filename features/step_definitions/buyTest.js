@@ -1,4 +1,5 @@
 const {Given, When, Then} = require('cucumber');
+const assert = require ('assert').strict;
 const {getTexto,comprarProductos,validarStock,limpiarCarrito} =
 require('../components_functions/stockFunction');
 const {comparacionPrecios,buyProducts} = require('../components_functions/buyFunction');
@@ -16,19 +17,18 @@ var validar;
     comprarRusserPotato = comprarProductos('.add-to-cart',numeroDeCompras,3); 
  }); 
  When('I add to cart some potatoes',()=>{
-    priceRusserPotato = getTexto('.col.price',3);//Le estoy pasando el signo del euro, por tanto nunca me lo va a multiplicar :/
-    console.log('\n priceRusserPotato = ' + priceRusserPotato);
+    priceRusserPotato = getTexto('.col.price',3);
   }); 
  Then('I see the total price of potatoes I added',()=>{
     let priceCart = browser.getText('#dropdownCart');
+    assert.equal(comparacionPrecios(priceCart,priceRusserPotato,numeroDeCompras),true);
     validar = comparacionPrecios(priceCart,priceRusserPotato,numeroDeCompras);
-    console.log('\n validar = ' + validar);
+  
   });
  Then('buy the potatoes',()=>{
-  console.log('\n validar = ' + validar); 
   if(validar === true){
      let comprar = buyProducts();
-   }else{browser.pause(timeOut);console.log('\n ERRRORRRRRORORORO');}
+  }else{browser.pause(timeOut);}
 
  });
 
