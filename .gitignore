@@ -1,4 +1,17 @@
+<<<<<<< HEAD
 node_modules
 shots
 yarn-error.log
 yarn.lock
+=======
+shots
+mode_modules
+README.md
+yarn-error.log
+yarn.lock
+.\features\cart.feature
+.\features\download.feature
+.\features\order.feature
+.\features\pagination.feature
+.\features\upload.feature
+>>>>>>> stock
