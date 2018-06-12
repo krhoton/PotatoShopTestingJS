@@ -1,8 +1,9 @@
 
 module.exports = {    
     comparacionPrecios: function(precioCarrito,precioProducto,numeroDeCompras){
-        //Me falta pasarle los precios de los productos
-        return precioCarrito===parseInt(precioProducto)*parseInt(numeroDeCompras);
+        //hacemos la comprobacion conforme los precios corresponden con:
+        //precio total que hay en el carrito = multiplicación del precio del producto comprado con numero de compras. 
+        return parseFloat(precioCarrito.replace("€",""))===parseFloat(precioProducto.replace("€",""))*parseFloat(numeroDeCompras);
     },
     buyProducts: function(){
         let comparar = browser.getText('#dropdownCart'); 
@@ -14,7 +15,4 @@ module.exports = {
         }else{return false}
         
     }  
-
-
-
 }
