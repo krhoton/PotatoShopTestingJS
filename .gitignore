@@ -1,6 +1,8 @@
 shots
 mode_modules
 README.md
+yarn-error.log
+yarn.lock
 .\features\cart.feature
 .\features\download.feature
 .\features\order.feature
