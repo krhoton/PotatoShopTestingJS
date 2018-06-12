@@ -1,0 +1,4 @@
+node_modules
+shots
+yarn-error.log
+yarn.lock
