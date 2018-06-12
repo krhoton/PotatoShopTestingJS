@@ -1,3 +1,4 @@
+const assert = require ('assert').strict;
 
 module.exports = {    
     comparacionPrecios: function(precioCarrito,precioProducto,numeroDeCompras){
@@ -16,3 +17,9 @@ module.exports = {
         
     }  
 }
+/******************************************* TEST DE FUNCIONES *****************************************************/
+
+function comparacionDePrecios(precioCarrito,precioProducto,numeroDeCompras){
+    return parseFloat(precioCarrito.replace("€",""))===parseFloat(precioProducto.replace("€",""))*parseFloat(numeroDeCompras);
+}
+assert.equal(comparacionDePrecios('15.96€','3.99€',4),true);
