@@ -13,8 +13,7 @@ module.exports = {
             browser.click('#purchase');
             browser.click('.btn.btn-outline-dark');            
             return true;
-        }else{return false}
-        
+        }else{return false}        
     }  
 }
 /******************************************* TEST DE FUNCIONES *****************************************************/
@@ -22,7 +21,7 @@ module.exports = {
 function comparacionDePrecios(precioCarrito,precioProducto,numeroDeCompras){
    return (parseFloat(precioCarrito.replace("€",""))).toFixed(2)===(parseFloat(precioProducto.replace("€",""))*numeroDeCompras).toFixed(2);
 }
-assert.equal(comparacionDePrecios('0','1',0),true);
-assert.equal(comparacionDePrecios('9','3',3),true);
-assert.equal(comparacionDePrecios('9€','3€',3),true);
-assert.equal(comparacionDePrecios('9.60€','3.20€',3),true);
+assert.equal(module.exports.comparacionPrecios('0','1',0),true);
+assert.equal(module.exports.comparacionPrecios('9','3',3),true);
+assert.equal(module.exports.comparacionPrecios('9€','3€',3),true);
+assert.equal(module.exports.comparacionPrecios('9.60€','3.20€',3),true);

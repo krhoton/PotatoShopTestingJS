@@ -1,54 +1,40 @@
 const {Given, When, Then} = require('cucumber');
 const assert = require ('assert').strict;
-const {getTexto,comprarProductos,validarStock,limpiarCarrito} =
-require('../components_functions/stockFunction');
+const {getTexto,comprarProductos,limpiarCarrito} = require('../components_functions/stockFunction');
 const {comparacionPrecios,buyProducts} = require('../components_functions/buyFunction');
 
-const urlPotatoShop = "http://localhost:4200/";
-const timeOut = 2000;
 var numeroDeCompras;
 var priceRusserPotato;
 var comprarRusserPotato;
 var validar;
 
- Given('I want to buy some potatoes',()=>{
-    browser.url(urlPotatoShop);
+Given('I want to buy some potatoes',()=>{
+    browser.url("http://localhost:4200/");
     numeroDeCompras=3;
     comprarRusserPotato = comprarProductos('.add-to-cart',numeroDeCompras,3); 
- }); 
- When('I add to cart some potatoes',()=>{
+}); 
+When('I add to cart some potatoes',()=>{
     priceRusserPotato = getTexto('.col.price',3);
   }); 
- Then('I see the total price of potatoes I added',()=>{
+Then('I see the total price of potatoes I added',()=>{
     let priceCart = browser.getText('#dropdownCart');
     assert.equal(comparacionPrecios(priceCart,priceRusserPotato,numeroDeCompras),true);
-    validar = comparacionPrecios(priceCart,priceRusserPotato,numeroDeCompras);
-  
+    validar = comparacionPrecios(priceCart,priceRusserPotato,numeroDeCompras);  
   });
- Then('buy the potatoes',()=>{
+Then('buy the potatoes',()=>{
   if(validar === true){
     assert.equal(buyProducts(),true);
-  }else{browser.pause(timeOut);}
+  }
  });
 
- Given('I dont have a enough money',()=>{
+Given('I dont have a enough money',()=>{
     limpiarCarrito();
  }); 
- When('I try to pay the potatoes',()=>{
+When('I try to pay the potatoes',()=>{
    browser.click('#dropdownCart');
    browser.click('#purchase');
 }); 
- Then('I cant buy it',()=>{
+Then('I cant buy it',()=>{
     browser.waitForVisible('#alert')
     browser.click('#alert');
- });
-
-
-/* Sample_Syntax */
-/*
-Then(/^I must see "Thank you for your purchase!" on my screen$/, function(){
-    const checkOk = "div.modal-header h4.modal-title";
-    checkOk.includes("Thank you for your purchase!");
-  })
-})
-*/
+});
