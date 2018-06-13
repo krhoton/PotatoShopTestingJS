@@ -1,4 +1,5 @@
 const {Given, When, Then} = require('cucumber');
+<<<<<<< HEAD
 const assert = require ('assert').strict;
 const {getTexto,comprarProductos,limpiarCarrito} = require('../components_functions/stockFunction');
 const {comparacionPrecios,buyProducts} = require('../components_functions/buyFunction');
@@ -34,3 +35,6 @@ Then('I cant buy it',()=>{
     browser.waitForVisible('#alert')
     browser.click('#alert');
 });
+=======
+
+>>>>>>> origin/master
