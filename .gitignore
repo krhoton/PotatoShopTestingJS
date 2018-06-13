@@ -1,0 +1,11 @@
+shots
+mode_modules
+README.md
+yarn-error.log
+yarn.lock
+wdio.conf.js
+.\features\cart.feature
+.\features\download.feature
+.\features\order.feature
+.\features\pagination.feature
+.\features\upload.feature
