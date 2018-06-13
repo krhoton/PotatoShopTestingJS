@@ -82,6 +82,11 @@ exports.config = {
     capabilities: [{
         browserName: 'chrome',
         chromeOptions: {
+					prefs: {
+						download: {
+							 default_directory: "./downloaded_orders/",
+						 }
+					 }
         // to run chrome headless the following flags are required
         // (see https://developers.google.com/web/updates/2017/04/headless-chrome)
         // args: ['--headless', '--disable-gpu'],
