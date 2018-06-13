@@ -15,6 +15,6 @@ Feature: Filter
     Then I find the all products to include the same first name
 
   Scenario: I search a product that doesn't exist
-    Given I search a product
-    When I doesnt exist
-    Then I don't find the product
+    Given I put the name product in the filter texbox
+    When I does not exist the name of product
+    Then I dont find that products
