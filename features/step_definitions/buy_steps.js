@@ -1,4 +1,5 @@
 const {Given, When, Then} = require('cucumber');
+
 const assert = require ('assert').strict;
 const {getTexto,comprarProductos,limpiarCarrito} = require('../components_functions/stockFunction');
 const {comparacionPrecios,buyProducts} = require('../components_functions/buyFunction');

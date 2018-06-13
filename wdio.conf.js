@@ -1,7 +1,10 @@
+// Ponemos el Path de nuestras features y los require pertinentes
 const stepsFolder = './features/step_definitions';
 const fs = require('fs');
 var steps = [];
 
+// Hacemos un forEach de cada file en feature para que despues lo lea
+// en su consiguiente apartado de configuracion
 
 fs.readdirSync(stepsFolder).forEach(file => {
 	step = stepsFolder + '/' + file;
@@ -355,6 +358,9 @@ exports.config = {
     },
     //
     // Cucumber specific hooks
+    beforeFeature: function (feature) {
+    },
+		// Antes de hacerse el Scenario entrará directamente en la potato shop con el navegador
     beforeScenario: function (scenario) {
 	    //browser.url("http://localhost:4200")
       browser.windowHandleMaximize();
