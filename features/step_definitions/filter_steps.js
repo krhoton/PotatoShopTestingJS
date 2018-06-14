@@ -3,7 +3,7 @@ const assert = require ('assert').strict;
 const {getTexto} = require('../components_functions/stockFunction');
 
 Given('I am in the home page',()=>{
-    browser.url('http://localhost:4200/');
+    // browser.url('http://localhost:4200/');
 });
 When('I search a product',()=>{
     browser.setValue('#filterInput','Purple-Blue Potato');
