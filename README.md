@@ -4,7 +4,7 @@ Reunion 05/06/2018
 
 To do: 
 
-  Alejandro:
+  Alejandro:sa
     - 
     
   Oriol:
