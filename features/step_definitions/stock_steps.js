@@ -1,8 +1,8 @@
 const {Given, When, Then} = require('cucumber');
 const {getTexto,comprarProductos,validarStock,limpiarCarrito} =
 require('../components_functions/stockFunction');
+const assert = require ('assert').strict;
 
-const urlPotatoShop = "http://localhost:4200/";
 const timeOut = 100000;
 var numeroDeCompras;
 var stockRusserPotato_inicial;
@@ -11,7 +11,7 @@ var stockRusserPotato_final;
 var validar;
 
 Given(/^I am on potatoeshop page$/,()=>{
-    browser.url(urlPotatoShop);
+    browser.url("http://localhost:4200/");
 });
 When(/^I add a product to cart$/,()=>{ 
     numeroDeCompras=1;
@@ -62,13 +62,11 @@ Given(/^I add all product in my cart$/,()=>{
 When(/^I was wrong to buy the product$/,()=>{
     browser.click('.add-to-cart');
 });
-Then(/^I clear the cart$/,()=>{
+Then(/^I clear the cart of page$/,()=>{
     browser.click('#alert');
     limpiarCarrito();
 });
 Then(/^the stock of product come back the initial state$/,()=>{
-    stockRusserPotato_inicial = getTexto('.col.stock',0);//25
-    if(stockRusserPotato_inicial === '25'){
-        browser.click('.close');
-    }else{browser.pause(timeOut);}
+    assert.equal(getTexto('.col.stock',0),'25');//25
+    browser.click('.close');
 });

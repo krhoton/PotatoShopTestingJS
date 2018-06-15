@@ -22,5 +22,5 @@ Scenario: Add all product to cart
 Scenario: Clear the cart
   Given I add all product in my cart
   When I was wrong to buy the product
-  Then I clear the cart
+  Then I clear the cart of page
   And the stock of product come back the initial state
