@@ -4,13 +4,11 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "wdio": "wdio",
-    "test": "ENV=int ./node_modules/.bin/wdio wdio.conf.js"
+    "test": "wdio"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "assert": "^1.4.1",
     "cucumber": "^4.2.1",
     "selenium-standalone": "^6.14.1",
     "wdio-cucumber-framework": "1.0.2",
