@@ -27,13 +27,13 @@ Then(/^I will see the potatoes in order by name and descending order$/, function
 
 });
 
-// Then(/^I will se an arrow in descending direction$/, function(){
-//
-//   let element = browser.getText("");
-//   console.log('\n la flecha = '+ element);
-//
-//
-// });
+Then(/^I will se an arrow for name in descending direction$/, function(){
+  wait(1000);
+  let element = browser.getText("th.col-8#namesort span");
+  //console.log('\n la flecha = '+ element);
+  assert.equal(element[0],"↓");
+
+});
 
 /*--- Scenario: I order by name and ascending order ---*/
 
@@ -42,7 +42,8 @@ Given(/^I want to order by name and ascending order$/, function(){
 });
 
 When(/^I select name twice$/, function(){
-  browser.doubleClick("th#namesort.col-8");
+  browser.click("th#namesort.col-8");
+  browser.click("th#namesort.col-8");
   anotherPotatoeToCompare = browser.getText("tr.row td.col-8.item")[0];
   sortPotatoe = browser.getText("tr.row td.col-8.item")[0];
   arrsor = arrInitialPotatoe.sort(function(a,b){
@@ -59,4 +60,12 @@ When(/^I select name twice$/, function(){
 Then(/^I will see the potatoes in order by name and ascending order$/, function(){
 
   assert.equal(arrInitialPotatoe[0],arrsor[0]);
+});
+
+Then(/^I will se an arrow for name in ascending direction$/, function(){
+  wait(1000);
+  let element = browser.getText("th.col-8#namesort span");
+  console.log('\n la flecha = '+ element);
+  assert.equal(element[0],"↓");
+
 });
