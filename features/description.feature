@@ -7,4 +7,4 @@ Feature: Description
   Scenario: I read the product description
    Given I want to buy some potatoes
    When I select a product that I want to buy
-   Then I read the product description.
+   Then I read the product description
