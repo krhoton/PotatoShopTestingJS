@@ -5,6 +5,6 @@ Feature: Description
   So that I can buy a product 
   
   Scenario: I read the product description
-   Given I want to buy some potatoes
-   When I select a product that I want to buy
+   Given I want to information about of some product
+   When I select a product for more information
    Then I read the product description
