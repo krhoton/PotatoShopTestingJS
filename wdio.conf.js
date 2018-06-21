@@ -84,7 +84,7 @@ exports.config = {
         chromeOptions: {
 					prefs: {
 						download: {
-							 default_directory: "./downloaded_orders/",
+							 default_directory: ".\\downloaded_orders\\",
 						 }
 					 }
         // to run chrome headless the following flags are required
