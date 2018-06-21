@@ -97,8 +97,6 @@ Then(/^I must see the alert$/, function(){
 
 
 
-
-
 /*---- Funciones que se repiten ----*/
 
 function selectingPotatoes(num_potatoes) {

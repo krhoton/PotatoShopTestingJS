@@ -3,7 +3,7 @@ Feature: Buy
   As a user
   I want to add potatoes in my cart
   So that I buy potatoes
-
+  
   Scenario: I buy potatoes
    Given I want to buy some potatoes
    When I add to cart some potatoes
