@@ -359,10 +359,10 @@ exports.config = {
     //
     // Cucumber specific hooks
     beforeFeature: function (feature) {
-    },
+		},
 		// Antes de hacerse el Scenario entrará directamente en la potato shop con el navegador
     beforeScenario: function (scenario) {
-	    browser.url("http://localhost:4200");
+			browser.url("http://localhost:4200");
       browser.windowHandleMaximize();
     },
     /*
