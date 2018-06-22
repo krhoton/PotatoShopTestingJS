@@ -1,5 +1,6 @@
 // Ponemos el Path de nuestras features y los require pertinentes
 const path = require('path');
+const downloads = path.join('.', 'downloaded_orders');
 const stepsFolder = './features/step_definitions';
 const fs = require('fs');
 var steps = [];
@@ -83,11 +84,12 @@ exports.config = {
     capabilities: [{
         browserName: 'chrome',
         chromeOptions: {
+					args: ['--disable-gpu'],
 					prefs: {
 						download: {
 						  prompt_for_download: false,
 							directory_upgrade: true,
-	 						default_directory: 'downloaded_orders',
+	 						default_directory: downloads,
 						 }
 					 }
         // to run chrome headless the following flags are required
