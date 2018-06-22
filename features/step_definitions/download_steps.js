@@ -1,4 +1,6 @@
 const assert = require('assert').strict;
+const path = require('path');
+const download_path = path.normalize('./downloaded_orders');
 const fs = require('fs');
 const {Given, When, Then} = require('cucumber');
 let exists = false;
@@ -13,6 +15,7 @@ Given (/^I've made an order$/, function(){
 
 When (/^I downloaded it$/, function(){
 
+  console.log(download_path);
   browser.click("button#dropdownCart");
   browser.click("button#purchase");
   browser.click("div.modal-body a");
@@ -22,14 +25,8 @@ When (/^I downloaded it$/, function(){
 
 Then (/^It must appear in my computer$/, function(){
 
-  let file_route = "./downloaded_orders/order.txt"
-
-  fs.access(file_route, fs.constants.F_OK, function(err) {
-    if (err) {
-    } else {
-      exists = true;
-    }
-    assert.equal(exists, true);
+  fs.access(download_path, fs.constants.F_OK, function(err) {
+    throw err;
   });
 });
 
