@@ -1,6 +1,6 @@
 // Ponemos el Path de nuestras features y los require pertinentes
 const path = require('path');
-const downloads = path.join('.', 'downloaded_orders');
+const downloads = path.join(process.cwd(), 'downloaded_orders');
 const stepsFolder = './features/step_definitions';
 const fs = require('fs');
 var steps = [];
