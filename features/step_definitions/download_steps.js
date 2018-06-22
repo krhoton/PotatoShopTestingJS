@@ -1,7 +1,6 @@
 const assert = require('assert').strict;
-const path = require('path');
-const download_path = path.normalize('./downloaded_orders');
 const fs = require('fs');
+const download_path = 'downloaded_orders/order.txt'
 const {Given, When, Then} = require('cucumber');
 let exists = false;
 
