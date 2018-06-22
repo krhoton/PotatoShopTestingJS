@@ -23,10 +23,25 @@ When (/^I downloaded it$/, function(){
 
 Then (/^It must appear in my computer$/, function(){
 
-  fs.access(file_path, fs.constants.F_OK, function(err) {
-    throw err;
-  });
+  // Para comprobar que funciona con un caso negativo, cambiar en la siguiente
+  // function que se llama en el siguente if el file_path por un 'asdf'
+  // (por ejemplo)
+  
+  if(fsExistsSync(file_path)){
+    exists = true;
+  }
+  assert.equal(exists, true);
+
 });
+
+function fsExistsSync(myDir) {
+  try {
+    fs.accessSync(myDir);
+    return true;
+  } catch (e) {
+    return false;
+  }
+}
 
 
 /*---- Funciones que se repiten ----*/
