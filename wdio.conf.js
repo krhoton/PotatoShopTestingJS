@@ -84,7 +84,7 @@ exports.config = {
     capabilities: [{
         browserName: 'chrome',
         chromeOptions: {
-					args: ['--disable-gpu'],
+					args: ['--headless', '--disable-gpu'],
 					prefs: {
 						download: {
 						  prompt_for_download: false,
